@@ -1,53 +1,41 @@
-class Animal {
+class Bichinho {
     void som() {
-        System.out.println("O animal faz um som");
+        System.out.println("O scooby latiu");
     }
 
-    void comer(String alimento) {
-        System.out.println("O animal está comendo " + alimento);
+    void comer() {
+        System.out.println("O scooby esta comendo");
     }
 
-    void comer(String alimento, int tempo) {
-        System.out.println("O animal está comendo " + alimento + " por " + tempo + " minutos.");
+    void comer(String comida) {
+        System.out.println("O scooby está comendo " + comida);
     }
 }
 
-class Cachorro extends Animal {
+class Cachorro extends Bichinho {
     @Override
     void som() {
-        System.out.println("O cachorro late");
+        System.out.println("O scooby late");
     }
 }
 
-class Gato extends Animal {
+class Gato extends Bichinho {
     @Override
     void som() {
-        System.out.println("O gato mia");
+        System.out.println("Mas o amigo gato não miou");
     }
 }
 
-class Peixe extends Animal {
-    @Override
-    void som() {
-        System.out.println("O peixe faz blub blub");
-    }
-}
-
-public class TestePolimorfismoExecucao {
+public class tarefaduasformas {
     public static void main(String[] args) {
-        Animal meuAnimal;
+        Bichinho ramelo = new Cachorro();
+        ramelo.som();
 
-        meuAnimal = new Cachorro();  
-        meuAnimal.som();  
+        Bichinho tick = new Gato();
+        tick.som();
 
-        meuAnimal = new Gato();
-        meuAnimal.som();  
-
-        meuAnimal = new Peixe();
-        meuAnimal.som();  
-
-        // Teste com sobrecarga
-        meuAnimal.comer("ração");
-        meuAnimal.comer("alga", 5); 
+        Bichinho bicho = new Bichinho(); 
+        bicho.comer();
+        bicho.comer("ração");
     }
 }
