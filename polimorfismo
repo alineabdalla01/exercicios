@@ -1,0 +1,53 @@
+class Animal {
+    void som() {
+        System.out.println("O animal faz um som");
+    }
+
+    void comer(String alimento) {
+        System.out.println("O animal está comendo " + alimento);
+    }
+
+    void comer(String alimento, int tempo) {
+        System.out.println("O animal está comendo " + alimento + " por " + tempo + " minutos.");
+    }
+}
+
+class Cachorro extends Animal {
+    @Override
+    void som() {
+        System.out.println("O cachorro late");
+    }
+}
+
+class Gato extends Animal {
+    @Override
+    void som() {
+        System.out.println("O gato mia");
+    }
+}
+
+class Peixe extends Animal {
+    @Override
+    void som() {
+        System.out.println("O peixe faz blub blub");
+    }
+}
+
+public class TestePolimorfismoExecucao {
+    public static void main(String[] args) {
+        Animal meuAnimal;
+
+        meuAnimal = new Cachorro();  
+        meuAnimal.som();  
+
+        meuAnimal = new Gato();
+        meuAnimal.som();  
+
+        meuAnimal = new Peixe();
+        meuAnimal.som();  
+
+        // Teste com sobrecarga
+        meuAnimal.comer("ração");
+        meuAnimal.comer("alga", 5); 
+    }
+}
