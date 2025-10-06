@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package classeabstrata;
+
+/**
+ *
+ * @author aline 
+ */
+// Classe abstrata Animal
+abstract class Animal {
+    protected String nome; // Nome do animal de estimação
+
+    // Construtor
+    public Animal(String nome) {
+        this.nome = nome;
+    }
+
+    // Método abstrato que cada animal deve implementar
+    public abstract void emitirSom();
+
+    // Getter do nome
+    public String getNome() {
+        return nome;
+    }
+}
+
+// Classe concreta: Cachorro
+class Cachorro extends Animal {
+
+    public Cachorro(String nome) {
+        super(nome);
+    }
+
+    @Override
+    public void emitirSom() {
+        System.out.println(nome + " diz: au au au au");
+    }
+}
+
+// Classe principal para testar
+public class Classeabstrata {
+    public static void main(String[] args) {
+        // Criando um animal de estimação
+        Cachorro meuCachorro = new Cachorro("Scooby");
+
+        // Mostrando o nome e emitindo som
+        System.out.println("Nome do animal: " + meuCachorro.getNome());
+        meuCachorro.emitirSom();
+    }
+}
