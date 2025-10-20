@@ -1,0 +1,21 @@
+public class Main {
+    public static void main(String[] args) {
+        String nome = "   Aline Abadalla   ";  
+
+        int quantidadeDeCaracteres = nome.length();
+        System.out.println("Quantidade de caracteres: " + quantidadeDeCaracteres);
+
+        String nomeSemEspacos = nome.trim();
+        System.out.println("Nome sem espaços: '" + nomeSemEspacos + "'");
+
+        String nomeMaiusculo = nomeSemEspacos.toUpperCase();
+        System.out.println("Nome em maiúsculo: " + nomeMaiusculo);
+        
+        String[] nomeSeparado = nomeSemEspacos.split(" ");
+        String primeiroNome = nomeSeparado[0];
+        String sobrenome = nomeSeparado[1];
+        
+        System.out.println("Primeiro nome: " + primeiroNome);
+        System.out.println("Sobrenome: " + sobrenome);
+    }
+}
